@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private BoxCollider2D coll;
     private Animator anim;
-        private float dirX = 0f;
+    private float dirX = 0f;
+    private float timeBtwShots;
+    private float startTimeBtwShots = 0.25f;
     
     [SerializeField] private LayerMask jumpableGround;
-    [SerializeField] private float jumpStrength;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpStrength = 16.5f;
+    [SerializeField] private float moveSpeed = 8.5f;
 
+    public enum MovementState { idle, running, fire }
+  
     // Start is called before the first frame update
     private void Start()
     {
@@ -36,24 +40,37 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
         }
         UpdateAnimationUpdate();
-            }
+     }
     private void UpdateAnimationUpdate()
     {
+        MovementState state; 
+        
+
         if (dirX > 0f)
         {
-            //anim.SetBool("running", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            state = MovementState.running;
+
         }
         else if (dirX <0f)
         {
-            //anime.SetBool("running", true);
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            state = MovementState.running;
         }
+        else if (Input.GetButtonDown("Fire1") && (timeBtwShots <= 0))
+        {
+            state = MovementState.fire;
+            timeBtwShots = startTimeBtwShots;
+        } 
+           
         else
         {
-            //anim.SetBool("running", false);
+            timeBtwShots -= Time.deltaTime;
+            state = MovementState.idle;
         }
+        anim.SetInteger("state", (int)state);
     }
+
         private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .2f, jumpableGround);
