@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TelegraphSpawner : MonoBehaviour
-{
+{    
+    public Rigidbody2D rb;
     public GameObject telegraphPrefab;
+    public GameObject BanPrefab;
     public Transform player;
     public float speed;
 
     //Private variables
-    private float MOVING_SPEED = 10;
+    //private float MOVING_SPEED = 10;
     private float distance;
     private float timer;
-    private float CDtimer;
+    private float attTimer;
+
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,30 +29,27 @@ public class TelegraphSpawner : MonoBehaviour
             //Gets ready to attack the player
             timer = 0;
             SpawnTelegraphAtt();
-
-            /*          1/27/2024: NEED TO FIX THE MOVING SPEED OF THE BAN HAMMER, WHEN IT ATTACKS, IT MUST STOP AND AFTER COOLDOWN 
-                        RESUME THE SPEED OF THE MOVING HAMMER ALWAYS FOLLOWING THE PLAYER*/
-            CDtimer += Time.deltaTime;
-            if (CDtimer > 2){
-                CDtimer = 0;
-                speed = MOVING_SPEED;
-            }
-            
-            //Timing the attack
         }
         else{
-            //Checking the distance between player
-            //distance = Vector2.Distance(transform.position, player.transform.position);
-            //Vector2 direction = player.transform.position - transform.position;
+            //speed = MOVING_SPEED;
             Vector2 playerXPos = new Vector2(player.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, playerXPos, speed * Time.deltaTime);
         }
+        
     }
 
     void SpawnTelegraphAtt()
     {
-        speed = 0;
         Vector3 spawnPos = new Vector3(transform.position.x, 0, 0);
         Instantiate(telegraphPrefab, spawnPos, Quaternion.identity);
+        Instantiate(BanPrefab, spawnPos, Quaternion.identity);
+        //Method to Bring down Hammer
+        //downHammer();
+    }
+
+    void downHammer()
+    { 
+        Vector3 downPos = new Vector3(transform.position.x, player.position.y, 0);
+
     }
 }

@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentHealth);
     }
 
     private void RestartLevel()
