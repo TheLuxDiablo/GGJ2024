@@ -23,6 +23,7 @@ public class DialogManager : MonoBehaviour
         isActive = true;
         Debug.Log("Started conversation! Loaded messages: " + messages.Length);
         DisplayMessage();
+        backgroundBox.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
     }
  
     void DisplayMessage() {
@@ -32,6 +33,8 @@ public class DialogManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+
+        AnimateTextColor();
     }
 
     public void NextMessage() {
@@ -40,14 +43,20 @@ public class DialogManager : MonoBehaviour
             DisplayMessage();
         } else {
             Debug.Log("Conversation ended!");
+            backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();   
             isActive = false;
         }
+    }
+
+    public void AnimateTextColor() {
+        LeanTween.textAlpha(messageText.rectTransform, 0, 0);
+        LeanTween.textAlpha(messageText.rectTransform, 1, 4f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        backgroundBox.transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
