@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float health, maxHealth = 3f;
+    public GameObject victoryFlag;
 
     private void Start() 
     {
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            Instantiate(victoryFlag, new Vector3(20, 0, 0), Quaternion.identity);
             Destroy(gameObject);
         }
     }

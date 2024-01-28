@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +37,11 @@ public class EnemyBulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            var healthComponent = other.gameObject.GetComponent<Health>();
+            if (healthComponent != null) 
+            {
+                healthComponent.TakeDamage(1);
+            }
             Destroy(gameObject);
         }
     }

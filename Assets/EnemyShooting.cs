@@ -6,6 +6,7 @@ public class EnemyShooting : MonoBehaviour
 {
     [SerializeField] public GameObject bullet;
     [SerializeField] public Transform bulletPos;
+    
 
     private float timer;
     private GameObject player;
@@ -20,18 +21,17 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(distance);
 
-        if (distance < 10)
-        {
+        //if (distance < 10)
+        //{
             timer += Time.deltaTime;
             
-            if(timer > 2)
+            if(timer > 1)
             {
                 timer = 0;
                 shoot();
            }
-        }
+        //}
     }
 
     void shoot()
