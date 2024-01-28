@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 987189a1d4d908746ae0387588cda501
+  - enabled: 1
     path: Assets/Scenes/IntroCutscene.unity
     guid: a0cb750fa413f2f4abc0eb8b0d680170
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WaltDisney.unity
     guid: 99694cb13c3f85b42aeb1784149507d3
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d7752148c4bc8394aa7740ffe9c7d688
   m_configObjects: {}
