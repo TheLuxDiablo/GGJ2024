@@ -40,7 +40,7 @@ public class TelegraphSpawner : MonoBehaviour
 
     void SpawnTelegraphAtt()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, 0, 0);
+        Vector3 spawnPos = new Vector3(transform.position.x, -2, 0);
         Instantiate(telegraphPrefab, spawnPos, Quaternion.identity);
         Instantiate(BanPrefab, spawnPos, Quaternion.identity);
         //Method to Bring down Hammer
