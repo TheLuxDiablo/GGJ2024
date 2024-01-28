@@ -6172,7 +6172,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!1001 &4538879593753288411
+--- !u!1001 &5782003451332844270
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6180,14 +6180,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1680983710196583285, guid: 9b1840675332953408899e0fe87425b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680983710196583285, guid: 9b1840675332953408899e0fe87425b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
     - target: {fileID: 3282202694972498778, guid: 9b1840675332953408899e0fe87425b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.66
@@ -6232,10 +6224,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7304114384967349879, guid: 9b1840675332953408899e0fe87425b9, type: 3}
-      propertyPath: startTimeBtwShots
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6246,5 +6234,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 166578376}
-  - {fileID: 4538879593753288411}
+  - {fileID: 5782003451332844270}
   - {fileID: 43148683}
