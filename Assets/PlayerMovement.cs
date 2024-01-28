@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private float timeBtwShots;
     private float startTimeBtwShots = 0.25f;
+    [SerializeField] private AudioSource playerScream;
     
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float jumpStrength = 16.5f;
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetButtonDown("Fire1") && (timeBtwShots <= 0))
         {
+            playerScream.Play();
             state = MovementState.fire;
             timeBtwShots = startTimeBtwShots;
         } 
