@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -18,12 +19,17 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // Dead
+            Invoke("RestartLevel", 0.3f);
         }
     }
 
     void Update()
     {
         Debug.Log(currentHealth);
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
