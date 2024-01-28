@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Instantiate(victoryFlag, new Vector3(20, 0, 0), Quaternion.identity);
+            Instantiate(victoryFlag, new Vector3(20, -1, 0), Quaternion.identity);
             Destroy(gameObject);
         }
     }
