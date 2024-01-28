@@ -22,4 +22,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Update()
+    {
+        Debug.Log(health);
+    }
 }

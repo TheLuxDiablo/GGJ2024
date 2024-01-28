@@ -44,5 +44,10 @@ public class EnemyBulletScript : MonoBehaviour
             }
             Destroy(gameObject);
         }
+
+        else if (other.gameObject.CompareTag("PlayerBullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -30,4 +30,12 @@ public class Projectile : MonoBehaviour
             DestroyProjectile();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            DestroyProjectile();
+        }
+    }
 }
