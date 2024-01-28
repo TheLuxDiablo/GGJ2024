@@ -180,9 +180,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sidd Anand - Producer and Programmer\nEvie Rivera - Programmer\nRichard
-    Nguyen - Artist\nErica Kong - \nZahir Lara - Voice of Willie\nKai Lacerna - Voice
-    of Walt Disney/Willi Scream\n"
+  m_text: 'Sidd Anand - Producer and Programmer
+
+    Evie Rivera - Programmer
+
+    Mikyle
+    Oporto - Programmer
+
+    Richard Nguyen - Artist
+
+    Erica Kong - Composer
+
+
+    Zahir
+    Lara - Voice of Willie
+
+    Kai Lacerna - Guest Star (Voice of Walt Didney)
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a600379f2d5a18d49a85e2f0dfc81b89, type: 2}
   m_sharedMaterial: {fileID: 5857171137156563342, guid: a600379f2d5a18d49a85e2f0dfc81b89, type: 2}
